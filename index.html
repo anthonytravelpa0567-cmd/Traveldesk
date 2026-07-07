@@ -146,7 +146,45 @@
   .badge.quote{background:#fdf1de;color:var(--amber-500);}
   .badge.cancelled{background:#fbe7e5;color:var(--red-600);}
   .badge.pending{background:#e6eefb;color:var(--blue-700);}
+  .badge.changed{background:#fdeee0;color:#b5651d;}
   .ref-link{color:var(--blue-700);font-weight:700;text-decoration:none;font-family:var(--font-mono);}
+
+  /* ===== Overview tab (portfolio) ===== */
+  .ov-toolbar{display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap;}
+  .ov-toolbar .btn{padding:7px 13px;font-size:12.5px;}
+  .kv-grid{display:grid;grid-template-columns:170px 1fr 170px 1fr;row-gap:11px;column-gap:10px;font-size:13px;}
+  .kv-grid .k{color:var(--text-600);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.3px;}
+  .kv-grid .v{color:var(--navy-900);font-weight:600;}
+  .kv-grid .v a{color:var(--blue-700);font-weight:700;}
+  .kv-grid .v.money{font-family:var(--font-mono);}
+  .kv-grid .v.due{color:var(--red-600);}
+  .ov-section-title{font-size:13px;font-weight:800;color:var(--navy-900);text-transform:uppercase;letter-spacing:.4px;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+  .pax-table th, .pax-table td{font-size:12.5px;}
+  .lead-yes{color:var(--green-600);font-weight:700;}
+  .lead-no{color:var(--text-400);}
+  .element-card{border:1px solid var(--border);border-radius:8px;margin-bottom:14px;overflow:hidden;}
+  .element-head{
+    display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--panel-alt);
+    border-bottom:1px solid var(--border);flex-wrap:wrap;
+  }
+  .element-head .etype{font-weight:800;color:var(--navy-900);font-size:13.5px;}
+  .element-head .esup{color:var(--text-600);font-size:12.5px;}
+  .element-head .espacer{flex:1;}
+  .element-head .efig{text-align:right;font-size:12px;color:var(--text-600);}
+  .element-head .efig b{display:block;font-family:var(--font-mono);color:var(--navy-900);font-size:14px;}
+  .element-head .elink{color:var(--blue-700);font-weight:700;font-size:12px;cursor:pointer;}
+  .element-body{padding:16px;}
+  .element-body h4{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--text-600);margin:16px 0 8px;}
+  .element-body h4:first-child{margin-top:0;}
+  .flight-row, .room-row{
+    background:var(--panel-alt);border:1px solid var(--border);border-radius:6px;padding:10px 12px;margin-bottom:8px;font-size:12.5px;
+  }
+  .flight-row .fnum{font-family:var(--font-mono);font-weight:700;color:var(--navy-900);margin-bottom:4px;}
+  .element-elist{display:flex;flex-wrap:wrap;gap:6px 22px;color:var(--text-600);}
+  .element-elist b{color:var(--text-900);}
+  .doc-pill{font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;}
+  .doc-pill.no{background:#fbe7e5;color:var(--red-600);}
+  .doc-pill.yes{background:#e2f4ea;color:var(--green-600);}
 
   /* Toolbar */
   .toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap;}
@@ -285,6 +323,84 @@
 /* ================= MOCK DATA ================= */
 let bookings = [
   {
+    id:"TPA-25955", client:"Mr Balwant Dosanjh", destination:"Chersonissos, Crete, Greece",
+    depart:"22 Aug 2026", ret:"28 Aug 2026", status:"changed", agent:"Manpreet Harike", value:8552.00,
+    contact:{ name:"Mr Balwant Dosanjh", email:"ballydosanjh@hotmail.co.uk", phone:"07970255520",
+      address:"39 Hough Way, Essington, Wolverhampton, WV11 2BR", pref:"Phone",
+      detail:{
+        title:"Mr", firstName:"Balwant", middleName:"Singh", lastName:"Dosanjh",
+        dobDay:"13", dobMonth:"July", dobYear:"1978",
+        telephone:"07970255520", mobile:"07970255520", workPhone:"", altPhone:"", fax:"",
+        email:"ballydosanjh@hotmail.co.uk", altEmail:"",
+        postcode:"WV11 2BR", addressLine1:"39 Hough Way", addressLine2:"",
+        town:"Essington", county:"Wolverhampton", country:"United Kingdom"
+      } },
+    passengers:[
+      {name:"Mr Balwant Dosanjh", type:"Adult", dob:"13 Jul 1978", passport:"-"},
+      {name:"Mrs Sukhjeevan Dosanjh", type:"Adult", dob:"13 May 1980", passport:"-"},
+      {name:"Mr Jayben Dosanjh", type:"Adult", dob:"30 Dec 2004", passport:"-"},
+      {name:"Miss Jaya Dosanjh", type:"Adult", dob:"07 Jun 2008", passport:"-"}
+    ],
+    costings:[
+      {item:"Package - LUXME White Palace, 6 nights (All Inclusive)", supplier:"Jet2holidays", cost:7423.14, sell:8552.00}
+    ],
+    receipts:[],
+    supplierPayments:[],
+    documentation:[],
+    notes:[],
+    payments:{ total:8152.00, paid:0.00, due:8152.00, dueDate:"30 May 2026" },
+    overview:{
+      portfolioRef:"TPA-25955",
+      createdOn:"06/07/2026 20:04",
+      bookedOn:"06/07/2026 20:04",
+      hmRef:"15006864",
+      bookingWebsite:"www.travel-pa.com",
+      externalRef:"-",
+      importantInfo:"",
+      bookingStatusLabel:"Changed",
+      dueDate:"30/05/2026",
+      balanceDue:8152.00,
+      salesConsultant:"Manpreet Harike",
+      financials:{
+        holidayPrice:8552.00, supplements:-400.00, handlingFees:0.00, totalCost:8152.00,
+        totalPaid:0.00, outstanding:8152.00, unassignedCredits:0.00, assignedCredits:0.00, hwCommissionDue:318.64,
+        totalDue:7508.66, dueToSuppliers:7508.66, paidToSupplier:0.00, vat:188.14,
+        currencyLossGain:0.00, refund:0.00, profit:455.20, hwCommissionPaid:0.00
+      },
+      passengerDetails:[
+        {name:"Mr Balwant Dosanjh", dob:"13/07/1978", age:48, type:"Adult", lead:true, telephone:"07970255520", mobile:"07970255520", email:""},
+        {name:"Mrs Sukhjeevan Dosanjh", dob:"13/05/1980", age:46, type:"Adult", lead:false, telephone:"", mobile:"07970255520", email:""},
+        {name:"Mr Jayben Dosanjh", dob:"30/12/2004", age:21, type:"Adult", lead:false, telephone:"", mobile:"07970255520", email:""},
+        {name:"Miss Jaya Dosanjh", dob:"07/06/2008", age:18, type:"Adult", lead:false, telephone:"", mobile:"07970255520", email:""}
+      ],
+      elements:[
+        {
+          etype:"Package", status:"booked", supplier:"Jet2holidays", bookingRef:"21063198/S26H",
+          pax:4, nett:7423.14, gross:8552.00,
+          operatorRef:"21063198/S26H", from:"22/08/2026", hotelName:"LUXME White Palace",
+          nights:6, description:"", transfersIncluded:true, grossPrice:8552.00,
+          flights:[
+            {number:"LS907", departsDate:"22/08/2026", departsFrom:"Manchester (MAN)", departsTime:"16:10",
+              arrivesDate:"22/08/2026", arrivesTo:"Heraklion (HER)", arrivesTime:"22:25", cls:"Standard Class", meal:false},
+            {number:"LS1026", departsDate:"28/08/2026", departsFrom:"Heraklion (HER)", departsTime:"13:40",
+              arrivesDate:"28/08/2026", arrivesTo:"Manchester (MAN)", arrivesTime:"16:10", cls:"Standard Class", meal:false}
+          ],
+          rooms:[
+            {type:"Double Room", board:"All Inclusive", adults:2, children:0, infants:0},
+            {type:"Double Room", board:"All Inclusive", adults:2, children:0, infants:0}
+          ],
+          passengers:[
+            "Mr Balwant Singh Dosanjh (Adult 13/07/1978)",
+            "Mrs Sukhjeevan Kaur Dosanjh (Adult 13/05/1980)",
+            "Mr Jayben Singh Dosanjh (Adult 30/12/2004)",
+            "Miss Jaya Kaur Dosanjh (Adult 07/06/2008)"
+          ],
+          documentsReceived:false
+        }
+      ]
+    }
+  },
+  {
     id:"BK-20461", client:"Harrington, Mr D & Mrs L", destination:"Santorini, Greece",
     depart:"14 Sep 2026", ret:"21 Sep 2026", status:"confirmed", agent:"S. Kaur", value:3420.00,
     contact:{ name:"David Harrington", email:"d.harrington@mailbox.co.uk", phone:"+44 7700 900123",
@@ -302,6 +418,12 @@ let bookings = [
     receipts:[
       {date:"02 Jun 2026", ref:"RCP-8834", amount:1000.00, method:"Card", note:"Deposit"},
       {date:"20 Jul 2026", ref:"RCP-9012", amount:2420.00, method:"Bank Transfer", note:"Balance"}
+    ],
+    supplierPayments:[
+      {date:"05 Jun 2026", supplier:"Aegean Air", ref:"SUP-4410", method:"Bank Transfer", amount:640.00},
+      {date:"05 Jun 2026", supplier:"Grace Hotels", ref:"SUP-4411", method:"Bank Transfer", amount:1980.00},
+      {date:"05 Jun 2026", supplier:"Local Ops SA", ref:"SUP-4412", method:"Bank Transfer", amount:120.00},
+      {date:"05 Jun 2026", supplier:"Staysure", ref:"SUP-4413", method:"Card", amount:64.00}
     ],
     documentation:[
       {name:"Booking Confirmation.pdf", type:"Confirmation", date:"02 Jun 2026"},
@@ -326,6 +448,7 @@ let bookings = [
       {item:"Desert safari excursion", supplier:"Arabian Adventures", cost:95.00, sell:170.00}
     ],
     receipts:[{date:"28 Jun 2026", ref:"RCP-9101", amount:500.00, method:"Card", note:"Deposit"}],
+    supplierPayments:[],
     documentation:[{name:"Provisional Itinerary.pdf", type:"Itinerary", date:"26 Jun 2026"}],
     notes:[{author:"J. Michaels", date:"26 Jun 2026 14:40", text:"Awaiting visa confirmation before ticketing."}],
     payments:{ total:1980.00, paid:500.00, due:1480.00, dueDate:"15 Aug 2026" }
@@ -350,6 +473,10 @@ let bookings = [
       {date:"10 Mar 2026", ref:"RCP-7710", amount:1500.00, method:"Card", note:"Deposit"},
       {date:"01 Jun 2026", ref:"RCP-8890", amount:2000.00, method:"Bank Transfer", note:"Interim payment"}
     ],
+    supplierPayments:[
+      {date:"15 Mar 2026", supplier:"Virgin Atlantic", ref:"SUP-5510", method:"Bank Transfer", amount:2400.00},
+      {date:"15 Mar 2026", supplier:"Florida Villa Homes", ref:"SUP-5511", method:"Bank Transfer", amount:1200.00}
+    ],
     documentation:[
       {name:"Booking Confirmation.pdf", type:"Confirmation", date:"10 Mar 2026"},
       {name:"Villa Info Pack.pdf", type:"Itinerary", date:"10 Mar 2026"}
@@ -369,7 +496,7 @@ let bookings = [
       {item:"Winelands day tour", supplier:"Cape Tours Co", cost:60.00, sell:150.00}
     ],
     receipts:[],
-    documentation:[{name:"Quote v2.pdf", type:"Quote", date:"29 Jun 2026"}],
+    supplierPayments:[],
     notes:[{author:"J. Michaels", date:"29 Jun 2026 16:05", text:"Sent revised quote after client asked to drop game reserve add-on."}],
     payments:{ total:2650.00, paid:0, due:2650.00, dueDate:"-" }
   },
@@ -381,7 +508,7 @@ let bookings = [
     passengers:[{name:"Thao Nguyen", type:"Adult", dob:"17 Jan 1992", passport:"5610239800"}],
     costings:[{item:"Flights - return, LHR-KIX", supplier:"ANA", cost:0, sell:0}],
     receipts:[{date:"12 Feb 2026", ref:"RCP-6620", amount:400.00, method:"Card", note:"Deposit (refunded)"}],
-    documentation:[{name:"Cancellation Notice.pdf", type:"Cancellation", date:"18 Apr 2026"}],
+    supplierPayments:[],
     notes:[{author:"S. Kaur", date:"18 Apr 2026 09:44", text:"Client cancelled due to family emergency. Deposit refunded per policy."}],
     payments:{ total:0, paid:0, due:0, dueDate:"-" }
   }
@@ -411,7 +538,10 @@ let state = {
   searchTab: "search",   // search | manual  (Travel Search page)
   openBookingId: null,
   pfTab: "overview",
-  moreOpen: false
+  moreOpen: false,
+  ovOpenElements: {},
+  showReceiptForm: false,
+  showPaymentForm: false
 };
 
 const fmt = n => "\u00a3" + Number(n).toLocaleString('en-GB', {minimumFractionDigits:2, maximumFractionDigits:2});
@@ -645,21 +775,42 @@ function renderSearchAvailability(){
 function renderManualBookingForm(){
   return `
   <p style="margin:0 0 16px;color:var(--text-600);font-size:13px;">Use this when a booking has been made outside the system (e.g. by phone or with a supplier direct) and needs to be logged manually.</p>
+
+  <h4 style="font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--text-600);margin:0 0 10px;">Client &amp; Trip</h4>
   <div class="form-grid">
     <div class="field"><label>Client name</label><input id="mb-client" placeholder="e.g. Harrington, Mr D &amp; Mrs L"></div>
     <div class="field"><label>Destination</label><input id="mb-dest" placeholder="e.g. Santorini, Greece"></div>
+    <div class="field"><label>Destination country</label><input id="mb-country" placeholder="e.g. Greece"></div>
     <div class="field"><label>Departure date</label><input id="mb-depart" type="date"></div>
     <div class="field"><label>Return date</label><input id="mb-return" type="date"></div>
-    <div class="field"><label>Agent</label>
-      <select id="mb-agent"><option>S. Kaur</option><option>J. Michaels</option></select>
+    <div class="field"><label>Number of passengers</label><input id="mb-passengers" type="number" min="1" value="1"></div>
+    <div class="field"><label>Agent / sales consultant</label>
+      <select id="mb-agent"><option>S. Kaur</option><option>J. Michaels</option><option>Manpreet Harike</option></select>
     </div>
     <div class="field"><label>Status</label>
-      <select id="mb-status"><option value="confirmed">Confirmed</option><option value="pending">Pending</option><option value="quote">Quote</option></select>
+      <select id="mb-status"><option value="confirmed">Confirmed</option><option value="pending">Pending</option><option value="quote">Quote</option><option value="changed">Changed</option></select>
     </div>
-    <div class="field"><label>Booking value (\u00a3)</label><input id="mb-value" type="number" placeholder="e.g. 2500"></div>
-    <div class="field"><label>Contact email</label><input id="mb-email" placeholder="client@email.com"></div>
-    <div class="field" style="grid-column:1/-1;"><label>Contact phone</label><input id="mb-phone" placeholder="+44 7700 900000"></div>
   </div>
+
+  <h4 style="font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--text-600);margin:20px 0 10px;">Booking &amp; Supplier</h4>
+  <div class="form-grid">
+    <div class="field"><label>HM booking reference</label><input id="mb-hmref" placeholder="e.g. 15006864"></div>
+    <div class="field"><label>Supplier booking reference</label><input id="mb-bookingref" placeholder="e.g. 21063198/S26H"></div>
+    <div class="field"><label>Supplier / operator</label><input id="mb-supplier" placeholder="e.g. Jet2holidays"></div>
+    <div class="field"><label>Hotel / product name</label><input id="mb-hotel" placeholder="e.g. LUXME White Palace"></div>
+    <div class="field"><label>Number of nights</label><input id="mb-nights" type="number" min="0" placeholder="e.g. 7"></div>
+    <div class="field"><label>Balance due date</label><input id="mb-duedate" type="date"></div>
+  </div>
+
+  <h4 style="font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--text-600);margin:20px 0 10px;">Financials &amp; Contact</h4>
+  <div class="form-grid">
+    <div class="field"><label>Booking value / holiday price (\u00a3)</label><input id="mb-value" type="number" placeholder="e.g. 2500"></div>
+    <div class="field"><label>Cost price / nett (\u00a3, optional)</label><input id="mb-cost" type="number" placeholder="e.g. 2100"></div>
+    <div class="field"><label>Contact email</label><input id="mb-email" placeholder="client@email.com"></div>
+    <div class="field"><label>Contact phone</label><input id="mb-phone" placeholder="+44 7700 900000"></div>
+    <div class="field" style="grid-column:1/-1;"><label>Important info</label><textarea id="mb-important" placeholder="Anything the team needs to know about this booking..."></textarea></div>
+  </div>
+
   <div class="toolbar" style="margin-top:18px;">
     <button class="btn btn-primary" data-action="save-manual-booking">Save Booking</button>
     <button class="btn btn-ghost" data-action="clear-manual-booking">Clear Form</button>
@@ -696,6 +847,7 @@ function renderBookings(){
       <option value="confirmed">Confirmed</option>
       <option value="pending">Pending</option>
       <option value="quote">Quote</option>
+      <option value="changed">Changed</option>
       <option value="cancelled">Cancelled</option>
     </select>
     <button class="btn btn-primary" data-action="new-booking">+ New Booking</button>
@@ -714,7 +866,7 @@ function rowHtml(b){
   </tr>`;
 }
 function badge(status){
-  const map = {confirmed:"Confirmed", pending:"Pending", quote:"Quote", cancelled:"Cancelled"};
+  const map = {confirmed:"Confirmed", pending:"Pending", quote:"Quote", cancelled:"Cancelled", changed:"Changed"};
   return `<span class="badge ${status}">${map[status]||status}</span>`;
 }
 
@@ -780,56 +932,324 @@ function renderPfTabContent(b){
   }
 }
 
-function pfOverview(b){
+/* Builds the full Overview data set for a booking. Uses b.overview if the
+   booking has one (fully authored, e.g. the Dosanjh reference booking),
+   otherwise synthesises equivalent fields from the booking's existing data
+   so every booking renders the same rich layout. */
+function ovData(b){
+  if(b.overview) return b.overview;
   const totalCost = b.costings.reduce((s,c)=>s+c.cost,0);
   const totalSell = b.costings.reduce((s,c)=>s+c.sell,0);
-  const margin = totalSell - totalCost;
+  const created = b.notes[0] ? b.notes[0].date : '-';
+  const statusLabels = {confirmed:"Confirmed", pending:"Pending", quote:"Quote", cancelled:"Cancelled", changed:"Changed"};
+  return {
+    portfolioRef:b.id, createdOn:created, bookedOn:created,
+    hmRef:'-', bookingWebsite:'-', externalRef:'-', importantInfo:'',
+    bookingStatusLabel:statusLabels[b.status]||b.status,
+    dueDate:b.payments.dueDate, balanceDue:b.payments.due, salesConsultant:b.agent,
+    financials:{
+      holidayPrice:totalSell, supplements:0.00, handlingFees:0.00, totalCost:totalSell,
+      totalPaid:b.payments.paid, outstanding:b.payments.due, unassignedCredits:0.00, assignedCredits:0.00, hwCommissionDue:0.00,
+      totalDue:totalCost, dueToSuppliers:totalCost, paidToSupplier:0.00, vat:0.00,
+      currencyLossGain:0.00, refund:0.00, profit:totalSell-totalCost, hwCommissionPaid:0.00
+    },
+    passengerDetails:b.passengers.map((p,i)=>({
+      name:p.name, dob:p.dob, age:'', type:p.type, lead:i===0,
+      telephone:i===0?b.contact.phone:'', mobile:b.contact.phone, email:i===0?b.contact.email:''
+    })),
+    elements:b.costings.map(c=>({
+      etype:"Item", status:b.status, supplier:c.supplier, bookingRef:'-',
+      pax:b.passengers.length, nett:c.cost, gross:c.sell,
+      operatorRef:'-', from:b.depart, hotelName:c.item, nights:'-', description:'',
+      transfersIncluded:false, grossPrice:c.sell,
+      flights:[], rooms:[], passengers:b.passengers.map(p=>p.name), documentsReceived:false
+    }))
+  };
+}
+
+function kv(label, value, cls){
+  return `<div class="k">${label}</div><div class="v ${cls||''}">${(value===undefined||value===null||value==='')?'-':value}</div>`;
+}
+
+function pfOverview(b){
+  const ov = ovData(b);
+  const f = ov.financials;
   return `
-  <div class="form-grid">
-    <div>
-      <div class="card" style="margin-bottom:14px;"><div class="card-head"><h3>Trip Summary</h3></div>
-        <div class="card-body">
-          <p style="margin:0 0 8px;"><b>${b.destination}</b> &mdash; ${b.depart} to ${b.ret}</p>
-          <p style="margin:0;color:var(--text-600);">${b.passengers.length} passenger(s) &middot; Booked by ${b.agent}</p>
-        </div>
-      </div>
-      <div class="card"><div class="card-head"><h3>Latest Note</h3></div>
-        <div class="card-body">
-          ${b.notes.length ? `<div class="note-item"><div class="meta">${b.notes[b.notes.length-1].author} \u2014 ${b.notes[b.notes.length-1].date}</div>${b.notes[b.notes.length-1].text}</div>` : '<span style="color:var(--text-400);">No notes yet.</span>'}
-        </div>
-      </div>
+  <div class="ov-toolbar">
+    <button class="btn btn-primary" data-action="book-new-element">+ Book New Element</button>
+    <button class="btn btn-ghost" data-action="customer-view">Customer View</button>
+    <button class="btn btn-ghost" data-action="print-booking-ov">Print Booking</button>
+    <button class="btn btn-ghost" data-action="take-payment">Take Payment</button>
+    <span style="margin-left:auto;font-size:12.5px;color:var(--text-600);font-weight:600;">Linked Portfolios (0)</span>
+  </div>
+
+  <div class="card" style="margin-bottom:16px;"><div class="card-body">
+    <div class="kv-grid">
+      ${kv("Portfolio Reference", ov.portfolioRef)}
+      ${kv("Customer Name", b.client)}
+      ${kv("Created", ov.createdOn)}
+      ${kv("Contact Name", b.contact.name)}
+      ${kv("Booked On", ov.bookedOn)}
+      ${kv("Sales Consultant", ov.salesConsultant)}
+      ${kv("Departure Date", b.depart)}
+      ${kv("Booking Status", badge(b.status))}
+      ${kv("Due Date", ov.dueDate)}
+      ${kv("Balance Due", fmt(ov.balanceDue), "money due")}
+      ${kv("HM Booking Reference", ov.hmRef)}
+      ${kv("Booking Website", ov.bookingWebsite!=='-' ? `<a href="#">${ov.bookingWebsite}</a>` : '-')}
+      ${kv("External Reference", ov.externalRef)}
+      ${kv("Important Info", ov.importantInfo)}
     </div>
-    <div>
-      <div class="card"><div class="card-head"><h3>Financial Snapshot</h3></div>
-        <div class="card-body">
-          <div class="pay-summary">
-            <div class="pay-box"><div class="v">${fmt(totalSell)}</div><div class="l">Sell Price</div></div>
-            <div class="pay-box"><div class="v">${fmt(margin)}</div><div class="l">Margin</div></div>
-          </div>
-          <div class="pay-summary">
-            <div class="pay-box"><div class="v">${fmt(b.payments.paid)}</div><div class="l">Paid</div></div>
-            <div class="pay-box"><div class="v" style="color:${b.payments.due>0?'var(--red-600)':'var(--green-600)'};">${fmt(b.payments.due)}</div><div class="l">Balance Due</div></div>
-          </div>
-          ${b.payments.due>0 ? `<p style="font-size:12px;color:var(--text-600);margin:8px 0 0;">Due date: <b>${b.payments.dueDate}</b></p>` : ''}
-        </div>
-      </div>
+  </div></div>
+
+  <div class="card" style="margin-bottom:16px;"><div class="card-body">
+    <h3 class="ov-section-title">Financial Details</h3>
+    <div class="kv-grid">
+      ${kv("Holiday Price", fmt(f.holidayPrice), "money")}
+      ${kv("Total Due", fmt(f.totalDue), "money")}
+      ${kv("Supplements", (f.supplements<0?'-':'')+fmt(Math.abs(f.supplements)), "money")}
+      ${kv("Due to Suppliers", fmt(f.dueToSuppliers), "money")}
+      ${kv("Handling Fees", fmt(f.handlingFees), "money")}
+      ${kv("Paid To Supplier", fmt(f.paidToSupplier), "money")}
+      ${kv("Total Cost", fmt(f.totalCost), "money")}
+      ${kv("VAT", fmt(f.vat), "money")}
+      ${kv("Total Amount Paid", fmt(f.totalPaid), "money")}
+      ${kv("Outstanding", fmt(f.outstanding), "money due")}
+      ${kv("Outstanding", fmt(f.outstanding), "money due")}
+      ${kv("Currency Loss/Gain", fmt(f.currencyLossGain), "money")}
+      ${kv("Unassigned Credits", fmt(f.unassignedCredits), "money")}
+      ${kv("Refund", fmt(f.refund), "money")}
+      ${kv("Assigned Credits", fmt(f.assignedCredits), "money")}
+      ${kv("Profit", fmt(f.profit), "money")}
+      ${kv("Homeworker Commission Due", fmt(f.hwCommissionDue), "money")}
+      ${kv("Homeworker Commission Paid", fmt(f.hwCommissionPaid), "money")}
     </div>
-  </div>`;
+  </div></div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-head"><h3>Passenger Details</h3></div>
+    <div class="card-body" style="padding:0;">
+      <table class="pax-table">
+        <thead><tr><th>Passenger Name</th><th>Date of Birth</th><th>Type</th><th>Lead</th><th>Telephone</th><th>Mobile</th><th>Email</th><th></th></tr></thead>
+        <tbody>
+          ${ov.passengerDetails.map(p=>`<tr>
+            <td>${p.name}</td>
+            <td>${p.dob}${p.age?` (${p.age})`:''}</td>
+            <td>${p.type}</td>
+            <td>${p.lead?'<span class="lead-yes">Yes</span>':'<span class="lead-no">No</span>'}</td>
+            <td>${p.telephone||'\u2014'}</td>
+            <td>${p.mobile||'\u2014'}</td>
+            <td>${p.email||'\u2014'}</td>
+            <td><span style="color:var(--blue-700);cursor:pointer;font-weight:700;font-size:12px;" data-action="edit-passenger">Edit Passenger</span></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px;"><div class="card-body">
+    <h3 class="ov-section-title" style="margin-bottom:14px;">Portfolio Elements</h3>
+    ${ov.elements.map((el,idx)=>{
+      const open = state.ovOpenElements && state.ovOpenElements[idx]===false ? false : true;
+      return `
+      <div class="element-card">
+        <div class="element-head">
+          <span class="doc-pill ${el.status==='cancelled'?'no':'yes'}">${el.status}</span>
+          <span class="etype">${el.etype}</span>
+          <span class="elink" data-action="toggle-element-detail" data-idx="${idx}">Show/Hide Detail</span>
+          <span class="esup">${el.supplier} &middot; ${el.bookingRef}</span>
+          <span class="espacer"></span>
+          <div class="efig">Pax<b>${el.pax}</b></div>
+          <div class="efig">Nett<b>${fmt(el.nett)}</b></div>
+          <div class="efig">Gross<b>${fmt(el.gross)}</b></div>
+          <span class="elink" data-action="clone-element">Clone</span>
+          <span class="elink" data-action="edit-element">Edit</span>
+        </div>
+        ${open ? `
+        <div class="element-body">
+          <div class="kv-grid" style="grid-template-columns:170px 1fr 170px 1fr;margin-bottom:6px;">
+            ${kv("Booking Reference", el.bookingRef)}
+            ${kv("Operator Reference", el.operatorRef)}
+            ${kv("From", el.from)}
+            ${kv("Hotel Name", el.hotelName)}
+            ${kv("Number of Nights", el.nights)}
+            ${kv("Transfers Included", el.transfersIncluded?'Yes':'No')}
+            ${kv("Description", el.description||'-')}
+            ${kv("Gross Price", fmt(el.grossPrice), "money")}
+          </div>
+          ${el.flights && el.flights.length ? `
+            <h4>Flights</h4>
+            ${el.flights.map(fl=>`<div class="flight-row">
+              <div class="fnum">Flight ${fl.number}</div>
+              <div class="element-elist">
+                <span>Departs <b>${fl.departsDate} \u2014 ${fl.departsFrom}, ${fl.departsTime}</b></span>
+                <span>Arrives <b>${fl.arrivesDate} \u2014 ${fl.arrivesTo}, ${fl.arrivesTime}</b></span>
+                <span>Class <b>${fl.cls}</b></span>
+                <span>Meal Included <b>${fl.meal?'Yes':'No'}</b></span>
+              </div>
+            </div>`).join('')}
+          `:''}
+          ${el.rooms && el.rooms.length ? `
+            <h4>Room${el.rooms.length>1?'s':''}</h4>
+            ${el.rooms.map(r=>`<div class="room-row">
+              <div class="element-elist">
+                <span>Room Type <b>${r.type}</b></span>
+                <span>Board Basis <b>${r.board}</b></span>
+                <span>Adults <b>${r.adults}</b></span>
+                <span>Children <b>${r.children}</b></span>
+                <span>Infants <b>${r.infants}</b></span>
+              </div>
+            </div>`).join('')}
+          `:''}
+          ${el.passengers && el.passengers.length ? `
+            <h4>Passengers</h4>
+            <div class="element-elist">${el.passengers.map(p=>`<span>${p}</span>`).join('')}</div>
+          `:''}
+          <h4>Documents Received</h4>
+          <span class="doc-pill ${el.documentsReceived?'yes':'no'}">${el.documentsReceived?'Y':'N'}</span>
+        </div>` : ''}
+      </div>`;
+    }).join('')}
+    <div class="field" style="max-width:280px;margin-top:6px;">
+      <select id="ov-quick-action"><option>Select a quick action...</option><option>Add Insurance</option><option>Add Transfer</option><option>Add Excursion</option><option>Add Note</option></select>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-body">
+    <h3 class="ov-section-title">Edit Portfolio Details</h3>
+    <div class="form-grid">
+      <div class="field"><label>Booking Status *</label>
+        <select id="ov-status">${["confirmed","pending","quote","changed","cancelled"].map(s=>`<option value="${s}" ${s===b.status?'selected':''}>${{confirmed:"Confirmed",pending:"Pending",quote:"Quote",changed:"Booking Changed",cancelled:"Cancelled"}[s]}</option>`).join('')}</select>
+      </div>
+      <div class="field"><label>Sales Consultant</label>
+        <input id="ov-consultant" value="${ov.salesConsultant||''}" placeholder="Select the sales consultant who this portfolio is assigned to.">
+      </div>
+      <div class="field"><label>Trading Name</label>
+        <input placeholder="If you have multiple trading names you can select which of these this booking has been done under.">
+      </div>
+      <div class="field"><label>Destination Country</label>
+        <input value="${b.destination.split(',').pop().trim()}" placeholder="Select the country you want to consider as the destination for this booking.">
+      </div>
+      <div class="field"><label>Source Code</label>
+        <input placeholder="If this portfolio originated from a specific source select this here.">
+      </div>
+      <div class="field"><label>Repeat Client</label>
+        <select><option>-</option><option>Yes</option><option>No</option></select>
+      </div>
+      <div class="field" style="grid-column:1/-1;"><label>Custom Due Date</label>
+        <p style="margin:0 0 6px;font-size:12px;color:var(--text-600);">The current due date for this booking is ${ov.dueDate}. This will be automatically adjusted as the booked elements are changed unless a custom due date has been set.</p>
+        <input type="date">
+      </div>
+      <div class="field"><label>Tickets on Departure *</label>
+        <select><option>Yes</option><option>No</option></select>
+      </div>
+      <div class="field"><label>ATOL Booking *</label>
+        <select><option>Yes</option><option>No</option></select>
+      </div>
+      <div class="field"><label>Exit Country of Origin Date</label>
+        <input type="date" placeholder="The date the booking leaves the country of Origin.">
+      </div>
+      <div class="field"><label>External Reference</label>
+        <input value="${ov.externalRef==='-'?'':ov.externalRef}" placeholder="A reference number used to link this booking with a third party system.">
+      </div>
+      <div class="field" style="grid-column:1/-1;"><label>Consultant Extension</label><textarea></textarea></div>
+      <div class="field" style="grid-column:1/-1;"><label>Important Info</label><textarea>${ov.importantInfo||''}</textarea></div>
+    </div>
+    <div class="toolbar" style="margin-top:16px;">
+      <button class="btn btn-primary" data-action="save-portfolio-details">Save Changes</button>
+    </div>
+  </div></div>`;
+}
+
+/* Builds the full contact detail set for a booking. Uses b.contact.detail if
+   authored (e.g. the Dosanjh reference booking), otherwise makes a best-effort
+   split of the existing name/address/phone fields so every booking's Contact
+   tab renders the same full form. */
+function contactDetail(b){
+  const c = b.contact;
+  if(c.detail) return c.detail;
+  const titleMatch = c.name.match(/^(Mr|Mrs|Miss|Ms|Dr)\.?\s+/i);
+  const title = titleMatch ? titleMatch[1] : '';
+  const rest = (titleMatch ? c.name.slice(titleMatch[0].length) : c.name).trim();
+  const nameParts = rest.split(/\s+/).filter(Boolean);
+  const firstName = nameParts[0]||'';
+  const lastName = nameParts.length>1 ? nameParts[nameParts.length-1] : '';
+  const middleName = nameParts.length>2 ? nameParts.slice(1,-1).join(' ') : '';
+  const addrParts = (c.address||'').split(',').map(s=>s.trim()).filter(s=>s && s!=='-');
+  let postcode='', town='';
+  if(addrParts.length){
+    const last = addrParts[addrParts.length-1];
+    if(/\d/.test(last) && last.length<=9){ postcode = last; addrParts.pop(); }
+    town = addrParts.length ? addrParts.pop() : '';
+  }
+  return {
+    title, firstName, middleName, lastName,
+    dobDay:'', dobMonth:'', dobYear:'',
+    telephone:(c.phone&&c.phone!=='-')?c.phone:'', mobile:'', workPhone:'', altPhone:'', fax:'',
+    email:(c.email&&c.email!=='-')?c.email:'', altEmail:'',
+    postcode, addressLine1:addrParts.join(', '), addressLine2:'', town, county:'', country:'United Kingdom'
+  };
 }
 
 function pfContact(b){
-  const c = b.contact;
+  const d = contactDetail(b);
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   return `
+  <h3 class="ov-section-title">Personal Details</h3>
   <div class="form-grid">
-    <div class="field"><label>Full name</label><input value="${c.name}"></div>
-    <div class="field"><label>Email</label><input value="${c.email}"></div>
-    <div class="field"><label>Phone</label><input value="${c.phone}"></div>
-    <div class="field"><label>Preferred contact</label>
-      <select>${["Email","Phone","Post"].map(o=>`<option ${o===c.pref?'selected':''}>${o}</option>`).join('')}</select>
+    <div class="field"><label>Title</label>
+      <select id="ct-title">${["","Mr","Mrs","Miss","Ms","Dr"].map(o=>`<option value="${o}" ${o===d.title?'selected':''}>${o||'-'}</option>`).join('')}</select>
     </div>
-    <div class="field" style="grid-column:1/-1;"><label>Address</label><textarea>${c.address}</textarea></div>
+    <div class="field"><label>First Name *</label><input id="ct-first" value="${d.firstName}"></div>
+    <div class="field"><label>Middle Name</label><input id="ct-middle" value="${d.middleName}"></div>
+    <div class="field"><label>Last Name *</label><input id="ct-last" value="${d.lastName}"></div>
+    <div class="field">
+      <label>Date of Birth</label>
+      <div style="display:flex;gap:8px;">
+        <input id="ct-dob-day" type="number" min="1" max="31" placeholder="DD" value="${d.dobDay}" style="width:70px;flex:none;">
+        <select id="ct-dob-month" style="flex:1;">
+          <option value="" ${!d.dobMonth?'selected':''}>-</option>
+          ${months.map(m=>`<option ${m===d.dobMonth?'selected':''}>${m}</option>`).join('')}
+        </select>
+        <input id="ct-dob-year" type="number" placeholder="YYYY" value="${d.dobYear}" style="width:90px;flex:none;">
+      </div>
+    </div>
   </div>
-  <div class="toolbar" style="margin-top:16px;">
+
+  <h3 class="ov-section-title" style="margin-top:22px;">Contact Numbers &amp; Email</h3>
+  <div class="form-grid">
+    <div class="field"><label>Telephone Number *</label><input id="ct-telephone" value="${d.telephone}"></div>
+    <div class="field"><label>Mobile Number</label><input id="ct-mobile" value="${d.mobile}"></div>
+    <div class="field"><label>Work Phone Number</label><input id="ct-workphone" value="${d.workPhone}"></div>
+    <div class="field"><label>Alternative Number</label><input id="ct-altphone" value="${d.altPhone}"></div>
+    <div class="field"><label>Fax Number</label><input id="ct-fax" value="${d.fax}"></div>
+    <div class="field"></div>
+    <div class="field"><label>Email</label><input id="ct-email" value="${d.email}"></div>
+    <div class="field"><label>Alternative Email</label><input id="ct-altemail" value="${d.altEmail}"></div>
+  </div>
+
+  <h3 class="ov-section-title" style="margin-top:22px;">Address</h3>
+  <div class="form-grid">
+    <div class="field">
+      <label>Postcode</label>
+      <p style="margin:0 0 6px;font-size:11.5px;color:var(--text-600);">Postcodes are only required for addresses within the United Kingdom.</p>
+      <input id="ct-postcode" value="${d.postcode}">
+    </div>
+    <div class="field"><label>&nbsp;</label><button class="btn btn-ghost" data-action="lookup-address" style="width:100%;justify-content:center;">Complete Address</button></div>
+    <div class="field"><label>Address Line 1</label><input id="ct-addr1" value="${d.addressLine1}"></div>
+    <div class="field"><label>Address Line 2</label><input id="ct-addr2" value="${d.addressLine2}"></div>
+    <div class="field"><label>Town / City</label><input id="ct-town" value="${d.town}"></div>
+    <div class="field"><label>County</label><input id="ct-county" value="${d.county}"></div>
+    <div class="field" style="grid-column:1/-1;"><label>Country</label><input id="ct-country" value="${d.country||'United Kingdom'}"></div>
+  </div>
+
+  <div class="toolbar" style="margin-top:18px;align-items:center;">
+    <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-900);cursor:pointer;">
+      <input type="checkbox" id="ct-create-passenger" style="width:16px;height:16px;">
+      Create As Passenger &mdash; create a new passenger record for this portfolio using these details.
+    </label>
+  </div>
+  <div class="toolbar" style="margin-top:10px;">
     <button class="btn btn-primary" data-action="save-contact">Save Changes</button>
   </div>`;
 }
@@ -862,10 +1282,34 @@ function pfCostings(b){
 
 function pfReceipts(b){
   return `
-  <div class="toolbar"><button class="btn btn-primary" data-action="add-receipt">+ Record Receipt</button></div>
+  <p style="margin:0 0 14px;color:var(--text-600);font-size:12.5px;">Client receipts &mdash; money received <b>from</b> ${b.contact.name} towards this booking.</p>
+  <div class="pay-summary">
+    <div class="pay-box"><div class="v">${fmt(b.payments.total)}</div><div class="l">Total Booking Value</div></div>
+    <div class="pay-box"><div class="v" style="color:var(--green-600);">${fmt(b.payments.paid)}</div><div class="l">Paid To Date</div></div>
+    <div class="pay-box"><div class="v" style="color:${b.payments.due>0?'var(--red-600)':'var(--green-600)'};">${fmt(b.payments.due)}</div><div class="l">Balance Due</div></div>
+    <div class="pay-box"><div class="v" style="font-size:14px;">${b.payments.dueDate}</div><div class="l">Due Date</div></div>
+  </div>
+  <div class="toolbar"><button class="btn btn-primary" data-action="toggle-receipt-form">+ Record Receipt</button><button class="btn btn-ghost" data-action="send-reminder">Send Payment Reminder</button></div>
+  ${state.showReceiptForm ? `
+  <div class="card" style="margin-bottom:16px;"><div class="card-body">
+    <div class="form-grid">
+      <div class="field"><label>Date</label><input id="rc-date" type="text" value="07 Jul 2026"></div>
+      <div class="field"><label>Reference</label><input id="rc-ref" value="RCP-${9200+b.receipts.length}"></div>
+      <div class="field"><label>Method</label>
+        <select id="rc-method"><option>Card</option><option>Bank Transfer</option><option>Cash</option><option>Cheque</option></select>
+      </div>
+      <div class="field"><label>Amount (\u00a3)</label><input id="rc-amount" type="number" placeholder="e.g. 500"></div>
+      <div class="field" style="grid-column:1/-1;"><label>Note</label><input id="rc-note" placeholder="e.g. Deposit, Balance, Interim payment"></div>
+    </div>
+    <div class="toolbar" style="margin-top:14px;">
+      <button class="btn btn-primary" data-action="save-receipt">Save Receipt</button>
+      <button class="btn btn-ghost" data-action="toggle-receipt-form">Cancel</button>
+    </div>
+  </div></div>` : ''}
   ${b.receipts.length ? `<table>
     <thead><tr><th>Date</th><th>Reference</th><th>Method</th><th>Note</th><th>Amount</th></tr></thead>
     <tbody>${b.receipts.map(r=>`<tr><td>${r.date}</td><td class="ref-link">${r.ref}</td><td>${r.method}</td><td>${r.note}</td><td>${fmt(r.amount)}</td></tr>`).join('')}</tbody>
+    <tfoot><tr style="font-weight:700;background:var(--panel-alt);"><td colspan="4">Total Received</td><td>${fmt(b.receipts.reduce((s,r)=>s+r.amount,0))}</td></tr></tfoot>
   </table>` : `<div class="empty-state"><div class="icon">\u{1F9FE}</div>No receipts recorded yet.</div>`}`;
 }
 
@@ -888,18 +1332,42 @@ function pfNotes(b){
 }
 
 function pfPayments(b){
+  const sp = b.supplierPayments || [];
+  const totalCost = b.costings.reduce((s,c)=>s+c.cost,0);
+  const paidToSupplier = sp.reduce((s,p)=>s+p.amount,0);
+  const balanceToSuppliers = totalCost - paidToSupplier;
+  const suppliers = [...new Set(b.costings.map(c=>c.supplier))];
   return `
+  <p style="margin:0 0 14px;color:var(--text-600);font-size:12.5px;">Supplier payments &mdash; money paid <b>out</b> from your agency to the suppliers on this booking.</p>
   <div class="pay-summary">
-    <div class="pay-box"><div class="v">${fmt(b.payments.total)}</div><div class="l">Total Booking Value</div></div>
-    <div class="pay-box"><div class="v" style="color:var(--green-600);">${fmt(b.payments.paid)}</div><div class="l">Paid To Date</div></div>
-    <div class="pay-box"><div class="v" style="color:${b.payments.due>0?'var(--red-600)':'var(--green-600)'};">${fmt(b.payments.due)}</div><div class="l">Balance Due</div></div>
-    <div class="pay-box"><div class="v" style="font-size:14px;">${b.payments.dueDate}</div><div class="l">Due Date</div></div>
+    <div class="pay-box"><div class="v">${fmt(totalCost)}</div><div class="l">Total Due to Suppliers</div></div>
+    <div class="pay-box"><div class="v" style="color:var(--green-600);">${fmt(paidToSupplier)}</div><div class="l">Paid to Supplier</div></div>
+    <div class="pay-box"><div class="v" style="color:${balanceToSuppliers>0?'var(--red-600)':'var(--green-600)'};">${fmt(balanceToSuppliers)}</div><div class="l">Balance Outstanding</div></div>
   </div>
-  <div class="toolbar"><button class="btn btn-primary" data-action="take-payment">+ Take Payment</button><button class="btn btn-ghost" data-action="send-reminder">Send Payment Reminder</button></div>
-  <table>
-    <thead><tr><th>Date</th><th>Reference</th><th>Method</th><th>Amount</th></tr></thead>
-    <tbody>${b.receipts.map(r=>`<tr><td>${r.date}</td><td class="ref-link">${r.ref}</td><td>${r.method}</td><td>${fmt(r.amount)}</td></tr>`).join('') || `<tr><td colspan="4" style="text-align:center;color:var(--text-400);">No payments recorded.</td></tr>`}</tbody>
-  </table>`;
+  <div class="toolbar"><button class="btn btn-primary" data-action="toggle-payment-form">+ Record Supplier Payment</button></div>
+  ${state.showPaymentForm ? `
+  <div class="card" style="margin-bottom:16px;"><div class="card-body">
+    <div class="form-grid">
+      <div class="field"><label>Date</label><input id="sp-date" type="text" value="07 Jul 2026"></div>
+      <div class="field"><label>Supplier</label>
+        <select id="sp-supplier">${suppliers.map(s=>`<option>${s}</option>`).join('') || '<option>-</option>'}</select>
+      </div>
+      <div class="field"><label>Reference</label><input id="sp-ref" value="SUP-${5600+sp.length}"></div>
+      <div class="field"><label>Method</label>
+        <select id="sp-method"><option>Bank Transfer</option><option>Card</option><option>Cheque</option></select>
+      </div>
+      <div class="field" style="grid-column:1/-1;"><label>Amount (\u00a3)</label><input id="sp-amount" type="number" placeholder="e.g. 640"></div>
+    </div>
+    <div class="toolbar" style="margin-top:14px;">
+      <button class="btn btn-primary" data-action="save-supplier-payment">Save Payment</button>
+      <button class="btn btn-ghost" data-action="toggle-payment-form">Cancel</button>
+    </div>
+  </div></div>` : ''}
+  ${sp.length ? `<table>
+    <thead><tr><th>Date</th><th>Supplier</th><th>Reference</th><th>Method</th><th>Amount</th></tr></thead>
+    <tbody>${sp.map(p=>`<tr><td>${p.date}</td><td>${p.supplier}</td><td class="ref-link">${p.ref}</td><td>${p.method}</td><td>${fmt(p.amount)}</td></tr>`).join('')}</tbody>
+    <tfoot><tr style="font-weight:700;background:var(--panel-alt);"><td colspan="4">Total Paid to Suppliers</td><td>${fmt(paidToSupplier)}</td></tr></tfoot>
+  </table>` : `<div class="empty-state"><div class="icon">\u{1F4B8}</div>No supplier payments recorded yet.</div>`}`;
 }
 
 /* ================= EVENTS ================= */
@@ -944,21 +1412,66 @@ function attachListEvents(){
     }
     const depart = document.getElementById('mb-depart').value;
     const ret = document.getElementById('mb-return').value;
+    const country = document.getElementById('mb-country').value.trim();
+    const numPax = Math.max(parseInt(document.getElementById('mb-passengers').value) || 1, 1);
     const agent = document.getElementById('mb-agent').value;
     const status = document.getElementById('mb-status').value;
+    const hmRef = document.getElementById('mb-hmref').value.trim();
+    const bookingRef = document.getElementById('mb-bookingref').value.trim();
+    const supplier = document.getElementById('mb-supplier').value.trim();
+    const hotel = document.getElementById('mb-hotel').value.trim();
+    const nights = document.getElementById('mb-nights').value.trim();
+    const dueDateRaw = document.getElementById('mb-duedate').value;
     const value = parseFloat(document.getElementById('mb-value').value) || 0;
+    const cost = parseFloat(document.getElementById('mb-cost').value) || value;
     const email = document.getElementById('mb-email').value.trim();
     const phone = document.getElementById('mb-phone').value.trim();
+    const important = document.getElementById('mb-important').value.trim();
     const fmtDate = d => d ? new Date(d).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}) : 'TBC';
+    const fmtDateSlash = d => d ? new Date(d).toLocaleDateString('en-GB',{day:'2-digit',month:'2-digit',year:'numeric'}) : '-';
+    const statusLabels = {confirmed:"Confirmed", pending:"Pending", quote:"Quote", cancelled:"Cancelled", changed:"Changed"};
 
     const newId = "BK-" + (20465 + bookings.filter(b=>b.id.startsWith('BK-2046')).length + Math.floor(Math.random()*100));
+    const passengers = [{name:client, type:"Adult", dob:'-', passport:'-'}];
+    for(let i=1;i<numPax;i++) passengers.push({name:`Passenger ${i+1}`, type:"Adult", dob:'-', passport:'-'});
+
+    const costings = (supplier||hotel) ? [{
+      item: hotel ? `${hotel}${nights?` (${nights} nights)`:''}` : `Booking for ${dest}`,
+      supplier: supplier||'-', cost, sell:value
+    }] : [];
+
+    const nowStr = "07/07/2026 " + new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+
     bookings.unshift({
       id:newId, client, destination:dest, depart:fmtDate(depart), ret:fmtDate(ret),
       status, agent, value,
-      contact:{ name:client, email:email||'-', phone:phone||'-', address:'-', pref:'Email' },
-      passengers:[{name:client, type:"Adult", dob:'-', passport:'-'}],
-      costings:[], receipts:[], documentation:[], notes:[{author:agent, date:"07 Jul 2026", text:"Booking added manually."}],
-      payments:{ total:value, paid:0, due:value, dueDate:'-' }
+      contact:{ name:client, email:email||'-', phone:phone||'-', address:'-', pref: email?'Email':'Phone' },
+      passengers, costings, receipts:[], supplierPayments:[], documentation:[],
+      notes:[{author:agent, date:"07 Jul 2026", text:"Booking added manually."}],
+      payments:{ total:value, paid:0, due:value, dueDate: dueDateRaw?fmtDate(dueDateRaw):'-' },
+      overview:{
+        portfolioRef:newId, createdOn:nowStr, bookedOn:nowStr,
+        hmRef:hmRef||'-', bookingWebsite:'-', externalRef:'-', importantInfo:important,
+        bookingStatusLabel:statusLabels[status]||status,
+        dueDate: dueDateRaw?fmtDateSlash(dueDateRaw):'-', balanceDue:value, salesConsultant:agent,
+        financials:{
+          holidayPrice:value, supplements:0.00, handlingFees:0.00, totalCost:cost,
+          totalPaid:0.00, outstanding:value, unassignedCredits:0.00, assignedCredits:0.00, hwCommissionDue:0.00,
+          totalDue:cost, dueToSuppliers:cost, paidToSupplier:0.00, vat:0.00,
+          currencyLossGain:0.00, refund:0.00, profit:value-cost, hwCommissionPaid:0.00
+        },
+        passengerDetails:passengers.map((p,i)=>({
+          name:p.name, dob:p.dob, age:'', type:p.type, lead:i===0,
+          telephone:i===0?(phone||''):'', mobile:phone||'', email:i===0?(email||''):''
+        })),
+        elements: costings.length ? [{
+          etype:"Package", status, supplier:supplier||'-', bookingRef:bookingRef||'-',
+          pax:numPax, nett:cost, gross:value,
+          operatorRef:bookingRef||'-', from: depart?fmtDateSlash(depart):'-', hotelName:hotel||dest,
+          nights:nights||'-', description:'', transfersIncluded:false, grossPrice:value,
+          flights:[], rooms:[], passengers:passengers.map(p=>p.name), documentsReceived:false
+        }] : []
+      }
     });
     toast("Booking " + newId + " saved");
     state.topTab = "bookings";
@@ -1014,7 +1527,12 @@ function attachListEvents(){
 
 function attachPortfolioEvents(){
   document.querySelectorAll('[data-pftab]').forEach(el=>{
-    el.addEventListener('click', ()=>{ state.pfTab = el.getAttribute('data-pftab'); render(); });
+    el.addEventListener('click', ()=>{
+      state.pfTab = el.getAttribute('data-pftab');
+      state.showReceiptForm = false;
+      state.showPaymentForm = false;
+      render();
+    });
   });
   const backBtn = document.querySelector('[data-nav-close]');
   if(backBtn) backBtn.addEventListener('click', ()=>{ state.openBookingId=null; render(); });
@@ -1028,10 +1546,9 @@ function attachPortfolioEvents(){
   document.addEventListener('click', ()=>{ if(state.moreOpen){ state.moreOpen=false; render(); } }, {once:true});
 
   const actionToasts = {
-    "save-contact":"Contact details saved",
     "add-passenger":"Add passenger form would open here",
+    "lookup-address":"Address lookup would run here",
     "add-costing":"Add costing line form would open here",
-    "add-receipt":"Receipt recorded",
     "upload-doc":"Document upload dialog would open here",
     "add-note":"Note added",
     "take-payment":"Take payment form would open here",
@@ -1039,8 +1556,126 @@ function attachPortfolioEvents(){
     "menu-print":"Preparing confirmation for print...",
     "menu-email":"Opening email composer...",
     "menu-duplicate":"Portfolio duplicated",
-    "menu-cancel":"Cancellation flow would start here"
+    "menu-cancel":"Cancellation flow would start here",
+    "book-new-element":"Book new element wizard would open here",
+    "customer-view":"Opening customer-facing view...",
+    "print-booking-ov":"Preparing booking for print...",
+    "edit-passenger":"Edit passenger form would open here",
+    "clone-element":"Element cloned",
+    "edit-element":"Edit element form would open here",
+    "save-portfolio-details":"Portfolio details saved"
   };
+  document.querySelectorAll('[data-action="toggle-element-detail"]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const idx = el.getAttribute('data-idx');
+      const isOpen = state.ovOpenElements[idx]===false ? false : true;
+      state.ovOpenElements[idx] = !isOpen;
+      render();
+    });
+  });
+
+  document.querySelectorAll('[data-action="toggle-receipt-form"]').forEach(el=>{
+    el.addEventListener('click', ()=>{ state.showReceiptForm = !state.showReceiptForm; render(); });
+  });
+
+  const saveRc = document.querySelector('[data-action="save-receipt"]');
+  if(saveRc) saveRc.addEventListener('click', ()=>{
+    const b = bookings.find(x=>x.id===state.openBookingId);
+    const amount = parseFloat(document.getElementById('rc-amount').value) || 0;
+    if(!b || amount<=0){ toast("Enter an amount to record a receipt"); return; }
+    const date = document.getElementById('rc-date').value.trim() || "07 Jul 2026";
+    const ref = document.getElementById('rc-ref').value.trim() || ("RCP-" + (9200 + b.receipts.length));
+    const method = document.getElementById('rc-method').value;
+    const note = document.getElementById('rc-note').value.trim() || "Payment received";
+    b.receipts.push({date, ref, amount, method, note});
+    b.payments.paid = (b.payments.paid||0) + amount;
+    b.payments.due = Math.max((b.payments.total||0) - b.payments.paid, 0);
+    if(b.overview){
+      b.overview.financials.totalPaid = b.payments.paid;
+      b.overview.financials.outstanding = b.payments.due;
+      b.overview.balanceDue = b.payments.due;
+    }
+    state.showReceiptForm = false;
+    render();
+    toast("Receipt " + ref + " recorded");
+  });
+
+  document.querySelectorAll('[data-action="toggle-payment-form"]').forEach(el=>{
+    el.addEventListener('click', ()=>{ state.showPaymentForm = !state.showPaymentForm; render(); });
+  });
+
+  const saveSp = document.querySelector('[data-action="save-supplier-payment"]');
+  if(saveSp) saveSp.addEventListener('click', ()=>{
+    const b = bookings.find(x=>x.id===state.openBookingId);
+    const amount = parseFloat(document.getElementById('sp-amount').value) || 0;
+    if(!b || amount<=0){ toast("Enter an amount to record a supplier payment"); return; }
+    const date = document.getElementById('sp-date').value.trim() || "07 Jul 2026";
+    const supplier = document.getElementById('sp-supplier').value;
+    const ref = document.getElementById('sp-ref').value.trim() || ("SUP-" + (5600 + (b.supplierPayments||[]).length));
+    const method = document.getElementById('sp-method').value;
+    if(!b.supplierPayments) b.supplierPayments = [];
+    b.supplierPayments.push({date, supplier, ref, method, amount});
+    if(b.overview){
+      const totalCost = b.costings.reduce((s,c)=>s+c.cost,0);
+      const paid = b.supplierPayments.reduce((s,p)=>s+p.amount,0);
+      b.overview.financials.paidToSupplier = paid;
+      b.overview.financials.dueToSuppliers = Math.max(totalCost - paid, 0);
+    }
+    state.showPaymentForm = false;
+    render();
+    toast("Supplier payment " + ref + " recorded");
+  });
+
+  const saveContact = document.querySelector('[data-action="save-contact"]');
+  if(saveContact) saveContact.addEventListener('click', ()=>{
+    const b = bookings.find(x=>x.id===state.openBookingId);
+    if(!b) return;
+    const first = document.getElementById('ct-first').value.trim();
+    const last = document.getElementById('ct-last').value.trim();
+    if(!first || !last){ toast("First name and last name are required"); return; }
+    const detail = {
+      title: document.getElementById('ct-title').value,
+      firstName: first,
+      middleName: document.getElementById('ct-middle').value.trim(),
+      lastName: last,
+      dobDay: document.getElementById('ct-dob-day').value.trim(),
+      dobMonth: document.getElementById('ct-dob-month').value,
+      dobYear: document.getElementById('ct-dob-year').value.trim(),
+      telephone: document.getElementById('ct-telephone').value.trim(),
+      mobile: document.getElementById('ct-mobile').value.trim(),
+      workPhone: document.getElementById('ct-workphone').value.trim(),
+      altPhone: document.getElementById('ct-altphone').value.trim(),
+      fax: document.getElementById('ct-fax').value.trim(),
+      email: document.getElementById('ct-email').value.trim(),
+      altEmail: document.getElementById('ct-altemail').value.trim(),
+      postcode: document.getElementById('ct-postcode').value.trim(),
+      addressLine1: document.getElementById('ct-addr1').value.trim(),
+      addressLine2: document.getElementById('ct-addr2').value.trim(),
+      town: document.getElementById('ct-town').value.trim(),
+      county: document.getElementById('ct-county').value.trim(),
+      country: document.getElementById('ct-country').value.trim() || 'United Kingdom'
+    };
+    const fullName = [detail.title, detail.firstName, detail.middleName, detail.lastName].filter(Boolean).join(' ');
+    const addressStr = [detail.addressLine1, detail.addressLine2, detail.town, detail.county, detail.postcode].filter(Boolean).join(', ');
+    b.contact.detail = detail;
+    b.contact.name = fullName;
+    b.contact.email = detail.email || '-';
+    b.contact.phone = detail.telephone || detail.mobile || '-';
+    b.contact.address = addressStr || '-';
+
+    const createPassenger = document.getElementById('ct-create-passenger').checked;
+    if(createPassenger){
+      const dob = (detail.dobDay && detail.dobMonth && detail.dobYear)
+        ? `${detail.dobDay} ${detail.dobMonth.slice(0,3)} ${detail.dobYear}` : '-';
+      b.passengers.push({name: fullName, type:"Adult", dob, passport:'-'});
+      toast("Contact saved and added as a new passenger");
+    } else {
+      toast("Contact details saved");
+    }
+    render();
+  });
+
   document.querySelectorAll('[data-action]').forEach(el=>{
     const act = el.getAttribute('data-action');
     if(act === 'add-note'){
